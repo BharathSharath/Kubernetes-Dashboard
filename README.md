@@ -28,20 +28,20 @@ click on < continue unsafe >
 
 
 # Creating Service Account 
-`kubectl create sa kubernetes-dashboard -n default`
+`kubectl create sa dashboard -n default`
 
 # Creating Cluster role binding 
-`kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=default:kubernetes-dashboard -n default`
+`kubectl create clusterrolebinding dashboard --clusterrole=cluster-admin --serviceaccount=default:dashboard -n default`
 
 
 # use this command to describe the service accont 
 
-`kubectl describe sa kubernetes-dashboard`
+`kubectl describe sa dashboard`
 
 
 # use this command to get the token from the secret 
 
-`kubectl describe secret kubernetes-dashboard-token-wvdnm `
+`kubectl describe secret dashboard-token-wvdnm `
 
 
 
