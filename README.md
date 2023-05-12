@@ -28,40 +28,18 @@ click on < continue unsafe >
 
 
 # Creating a Service Account and cluster role binding 
+`kubectl create sa kubernetes-dashboard -n default`
+`kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=default:kubernetes-dashboard -n default`
 
-# make a file service-account.yml and paste below content
-```
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: admin-user
-  namespace: kubernetes-dashboard
-
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: admin-user
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: cluster-admin
-subjects:
-- kind: ServiceAccount
-  name: admin-user
-  namespace: kubernetes-dashboard
-```  
-  
 
 # use this command to describe the service accont 
 
-`kubectl describe sa kubernetes-dashboard -n kubernetes-dashboard`
+`kubectl describe sa kubernetes-dashboard`
 
 
 # use this command to get the token from the secret 
 
-`kubectl describe secret kubernetes-dashboard-token-wvdnm -n kubernetes-dashboard`
+`kubectl describe secret kubernetes-dashboard-token-wvdnm `
 
 
 
