@@ -27,8 +27,10 @@ click on < continue unsafe >
 # now you can see kubernetes dashboard but you need to provide the token to login 
 
 
-# Creating a Service Account and cluster role binding 
+# Creating Service Account 
 `kubectl create sa kubernetes-dashboard -n default`
+
+# Creating Cluster role binding 
 `kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=default:kubernetes-dashboard -n default`
 
 
