@@ -30,7 +30,7 @@ click on < continue unsafe >
 # Creating a Service Account and cluster role binding 
 
 # make a file service-account.yml and paste below content
-
+```
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -51,12 +51,12 @@ subjects:
 - kind: ServiceAccount
   name: admin-user
   namespace: kubernetes-dashboard
-  
+```  
   
 
 # use this command to describe the service accont 
 
-kubectl describe sa kubernetes-dashboard -n kubernetes-dashboard
+`kubectl describe sa kubernetes-dashboard -n kubernetes-dashboard`
 
 
 # use this command to get the token from the secret 
